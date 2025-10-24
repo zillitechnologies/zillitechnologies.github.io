@@ -1,10 +1,5 @@
-/* ============================================
-   CSS Variables & Root Configuration
-   ============================================ */
 :root {
     font-size: 16px;
-    
-    /* Color Palette */
     --main-color: #2c68dc;
     --main-color-dark: #1f4fa8;
     --main-color-light: #5a8be8;
@@ -18,34 +13,23 @@
     --bg: #1c1c1c;
     --border: 0.1rem solid rgba(255, 255, 255, 0.15);
     --border-light: 0.1rem solid rgba(255, 255, 255, 0.08);
-    
-    /* Typography */
     --font-primary: "Alexandria", sans-serif;
     --font-secondary: "Roboto", sans-serif;
-    
-    /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
-    --spacing-3xl: 6rem;
-    
-    /* Transitions */
+    --spacing-3xl: 6rem;   
     --transition-fast: 0.2s ease-in-out;
     --transition-normal: 0.3s ease-in-out;
     --transition-slow: 0.5s ease-in-out;
-    
-    /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-/* ============================================
-   Global Styles
-   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -76,10 +60,7 @@ img {
     display: block;
 }
 
-/* ============================================
-   Background Video
-   ============================================ */
-.box-video {
+.box-image {
     position: fixed;
     z-index: -1;
     width: 100%;
@@ -88,7 +69,7 @@ img {
     left: 0;
 }
 
-.box-video video {
+.box-image img{
     min-height: 100%;
     min-width: 100%;
     position: fixed;
@@ -107,9 +88,6 @@ img {
     z-index: -1;
 }
 
-/* ============================================
-   Container & Layout
-   ============================================ */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -120,9 +98,6 @@ section {
     padding: var(--spacing-3xl) var(--spacing-md);
 }
 
-/* ============================================
-   Header & Navigation
-   ============================================ */
 .header {
     position: fixed;
     top: 0;
@@ -138,11 +113,13 @@ section {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-md);
+    height: 80px; 
+    padding: 0 var(--spacing-md);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--spacing-lg);
+    overflow: hidden; 
 }
 
 .logo-link {
@@ -157,7 +134,7 @@ section {
 }
 
 .logo {
-    height: 3rem;
+    height: 17rem;
     width: auto;
 }
 
@@ -214,9 +191,6 @@ section {
     transition: all var(--transition-normal);
 }
 
-/* ============================================
-   Hero Section
-   ============================================ */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -229,8 +203,12 @@ section {
     max-width: 700px;
 }
 
-.hero-subtitle {
-    font-size: 1.2rem;
+.section-aboutUs {
+    background-color: var(--blue);
+}
+
+.aboutUs-subtitle {
+    font-size: 3rem;
     color: var(--main-color);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -238,7 +216,16 @@ section {
     font-weight: 600;
 }
 
-.hero-title {
+.aboutUs-subtitle span {
+    font-size: 3rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.aboutUs-title {
     font-size: 4rem;
     font-weight: 700;
     color: var(--white);
@@ -246,7 +233,7 @@ section {
     line-height: 1.2;
 }
 
-.hero-text {
+.aboutUs-text {
     font-size: 1.1rem;
     color: var(--white-dark);
     line-height: 1.8;
@@ -254,9 +241,6 @@ section {
     font-weight: 300;
 }
 
-/* ============================================
-   Buttons
-   ============================================ */
 .btn {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -302,9 +286,6 @@ section {
     font-size: 0.9rem;
 }
 
-/* ============================================
-   Section Titles
-   ============================================ */
 .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -324,9 +305,6 @@ section {
     line-height: 1.8;
 }
 
-/* ============================================
-   Differentials Section
-   ============================================ */
 .section-differentials {
     background-color: var(--blue);
 }
@@ -341,12 +319,15 @@ section {
 .differentials-image {
     flex: 1 1 300px;
     min-width: 300px;
+    align-self: stretch; 
 }
 
 .differentials-image img {
     width: 100%;
+    height: 100%; 
     border-radius: 8px;
     box-shadow: var(--shadow-lg);
+    object-fit: cover; 
 }
 
 .differentials-content {
@@ -373,9 +354,6 @@ section {
     margin-top: var(--spacing-lg);
 }
 
-/* ============================================
-   Services Section
-   ============================================ */
 .section-services {
     background-color: var(--blue);
 }
@@ -390,12 +368,15 @@ section {
 .services-image {
     flex: 1 1 300px;
     min-width: 300px;
+    align-self: stretch; 
 }
 
 .services-image img {
     width: 100%;
+    height: 100%; 
     border-radius: 8px;
     box-shadow: var(--shadow-lg);
+    object-fit: cover; 
 }
 
 .services-grid {
@@ -456,9 +437,6 @@ section {
     font-weight: 300;
 }
 
-/* ============================================
-   Clients Section
-   ============================================ */
 .section-clients {
     background-color: var(--blue);
 }
@@ -518,9 +496,6 @@ section {
     font-weight: 300;
 }
 
-/* ============================================
-   Projects Section
-   ============================================ */
 .section-projects {
     background-color: var(--blue);
 }
@@ -550,7 +525,7 @@ section {
 
 .project-image {
     width: 100%;
-    height: 200px;
+    height: 450px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.3);
 }
@@ -588,9 +563,6 @@ section {
     flex: 1;
 }
 
-/* ============================================
-   Careers Section
-   ============================================ */
 .section-careers {
     background-color: var(--blue);
 }
@@ -638,9 +610,20 @@ section {
     align-self: flex-start;
 }
 
-/* ============================================
-   Location Section
-   ============================================ */
+.section-quick-contact {
+    background-color: var(--blue);
+    text-align: center;
+}
+
+.quick-contact-button {
+    margin-top: var(--spacing-xl);
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    font-size: 1.2rem;
+}
+
 .section-location {
     background-color: var(--blue);
 }
@@ -660,11 +643,13 @@ section {
     border-radius: 8px;
 }
 
-/* ============================================
-   Contact Section
-   ============================================ */
-.section-contact {
+.section-contact, .contatc {
     background-color: var(--blue);
+}
+
+.image-contatc img {
+    width: 10rem;
+    height: auto;
 }
 
 .contact-wrapper {
@@ -776,9 +761,6 @@ section {
     height: 20px;
 }
 
-/* ============================================
-   Footer
-   ============================================ */
 .footer {
     background-color: var(--blue);
     border-top: var(--border);
@@ -792,11 +774,6 @@ section {
     font-weight: 300;
 }
 
-/* ============================================
-   Responsive Design
-   ============================================ */
-
-/* Tablets (768px and below) */
 @media (max-width: 768px) {
     :root {
         font-size: 14px;
@@ -898,7 +875,6 @@ section {
     }
 }
 
-/* Mobile (480px and below) */
 @media (max-width: 480px) {
     :root {
         font-size: 13px;
@@ -945,7 +921,6 @@ section {
     }
 }
 
-/* Large Screens (1440px and above) */
 @media (min-width: 1440px) {
     .container {
         max-width: 1400px;
